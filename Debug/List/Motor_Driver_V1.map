@@ -1,0 +1,495 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.1.245/W32 for ARM                  23/Mar/2021  23:50:44
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Exe\Motor_Driver_V1.out
+#    Map file     =
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\List\Motor_Driver_V1.map
+#    Command line =
+#        -f C:\Users\Owner\AppData\Local\Temp\EW9E4E.tmp
+#        (F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj\ADC_Driver.o
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj\Clock_Driver.o
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj\Debug_Driver.o
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj\GPIO_Driver.o
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj\main.o
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj\PWM_Driver.o
+#        --no_out_extension -o
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Exe\Motor_Driver_V1.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\List\Motor_Driver_V1.map
+#        --config G:\IAR\arm\config\linker\TexasInstruments\TM4C123GH6.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code          0x0    0x40  vector_table_M.o [4]
+                                   - 0x40    0x40
+
+"P1":                                      0x360c
+  .text              ro code         0x40   0xfa6  xprintffull_nomb.o [2]
+  .text              ro code        0xfe6     0x2  vector_table_M.o [4]
+  .text              ro code        0xfe8    0x16  strchr.o [4]
+  .text              ro code       0x1000    0x40  xfail_s.o [2]
+  .text              ro code       0x1040    0x36  strlen.o [4]
+  .text              ro code       0x1078    0x58  memchr.o [4]
+  .text              ro code       0x10d0    0x76  ABImemcpy_unaligned.o [4]
+  .text              ro code       0x1148    0x70  frexp.o [3]
+  .text              ro code       0x11b8    0x2e  DblCmpLe.o [3]
+  .text              ro code       0x11e8    0x2e  DblCmpGe.o [3]
+  .text              ro code       0x1218   0x13a  ldexp.o [3]
+  .text              ro code       0x1354    0x3a  DblToS32.o [3]
+  .text              ro code       0x1390    0x22  S32ToDbl.o [3]
+  .text              ro code       0x13b4    0xe2  DblSub.o [3]
+  .text              ro code       0x1498   0x246  DblDiv.o [3]
+  .text              ro code       0x16e0    0x28  DblToU32.o [3]
+  .text              ro code       0x1708    0x1a  U32ToDbl.o [3]
+  .text              ro code       0x1724   0x1a2  DblMul.o [3]
+  .text              ro code       0x18c8   0x230  I64DivMod.o [4]
+  .text              ro code       0x1af8     0x6  abort.o [2]
+  .text              ro code       0x1b00   0x17a  DblAdd.o [3]
+  .text              ro code       0x1c7c     0x2  I64DivZer.o [4]
+  .text              ro code       0x1c80    0x14  exit.o [5]
+  .text              ro code       0x1c94    0x2c  iarttio.o [5]
+  .text              ro code       0x1cc0     0x8  XShttio.o [2]
+  .text              ro code       0x1cc8   0x424  GPIO_Driver.o [1]
+  .text              ro code       0x20ec    0x12  strcmp.o [4]
+  .text              ro code       0x2100   0x348  logx64.o [3]
+  .text              ro code       0x2448   0x30c  PWM_Driver.o [1]
+  .text              ro code       0x2754    0x98  Debug_Driver.o [1]
+  .text              ro code       0x27ec    0x28  printf.o [2]
+  .text              ro code       0x2814   0x2e8  main.o [1]
+  .text              ro code       0x2afc    0x80  FltSub.o [3]
+  .text              ro code       0x2b7c    0x24  FltCmpGe.o [3]
+  .text              ro code       0x2ba0    0x24  FltCmpLe.o [3]
+  .text              ro code       0x2bc4   0x2bc  ADC_Driver.o [1]
+  .text              ro code       0x2e80    0xd8  FltMul.o [3]
+  .text              ro code       0x2f58    0x48  FltToDbl.o [3]
+  .text              ro code       0x2fa0    0x68  DblToFlt.o [3]
+  .text              ro code       0x3008    0xd6  FltAdd.o [3]
+  .text              ro code       0x30e0    0x1c  U32ToFlt.o [3]
+  .text              ro code       0x30fc    0x78  lz77_init_single.o [4]
+  .text              ro code       0x3174    0x50  iarttio.o [5]
+  .text              ro code       0x31c4    0x24  XShttio.o [2]
+  .text              ro code       0x31e8    0x14  XShttio.o [2]
+  .text              ro code       0x31fc    0x28  data_init.o [4]
+  .text              ro code       0x3224    0x22  iarwrite.o [5]
+  .iar.init_table    const         0x3248    0x10  - Linker created -
+  .rodata            const         0x3258    0x20  PWM_Driver.o [1]
+  .text              ro code       0x3278    0x20  putchar.o [2]
+  .text              ro code       0x3298    0x10  write.o [5]
+  .text              ro code       0x32a8    0x1e  dwrite.o [5]
+  .text              ro code       0x32c6    0x20  iarwstd.o [5]
+  .text              ro code       0x32e8    0x1e  cmain.o [4]
+  .text              ro code       0x3306     0x4  low_level_init.o [2]
+  .text              ro code       0x330a     0x4  exit.o [2]
+  .text              ro code       0x3310     0xa  cexit.o [4]
+  .text              ro code       0x331a    0x16  xprout.o [2]
+  .rodata            const         0x3330    0x10  ADC_Driver.o [1]
+  .rodata            const         0x3340    0x10  ADC_Driver.o [1]
+  .rodata            const         0x3350     0xc  ADC_Driver.o [1]
+  .rodata            const         0x335c     0xc  ADC_Driver.o [1]
+  .rodata            const         0x3368     0xc  ADC_Driver.o [1]
+  .rodata            const         0x3374     0xc  ADC_Driver.o [1]
+  .rodata            const         0x3380     0xc  ADC_Driver.o [1]
+  .rodata            const         0x338c     0xc  GPIO_Driver.o [1]
+  .rodata            const         0x3398     0xc  GPIO_Driver.o [1]
+  .rodata            const         0x33a4     0xc  main.o [1]
+  .rodata            const         0x33b0     0xc  main.o [1]
+  .rodata            const         0x33bc     0xc  main.o [1]
+  .rodata            const         0x33c8     0xc  main.o [1]
+  .text              ro code       0x33d4     0xc  cstartup_M.o [4]
+  .rodata            const         0x33e0     0x8  ADC_Driver.o [1]
+  .rodata            const         0x33e8     0x8  ADC_Driver.o [1]
+  .rodata            const         0x33f0     0x8  ADC_Driver.o [1]
+  .rodata            const         0x33f8     0x8  ADC_Driver.o [1]
+  .rodata            const         0x3400     0x8  Debug_Driver.o [1]
+  .rodata            const         0x3408     0x8  Debug_Driver.o [1]
+  .rodata            const         0x3410     0x8  Debug_Driver.o [1]
+  .rodata            const         0x3418     0x8  GPIO_Driver.o [1]
+  .rodata            const         0x3420     0x8  GPIO_Driver.o [1]
+  .rodata            const         0x3428     0x8  GPIO_Driver.o [1]
+  .rodata            const         0x3430     0x8  GPIO_Driver.o [1]
+  .rodata            const         0x3438     0x8  GPIO_Driver.o [1]
+  .rodata            const         0x3440     0x8  GPIO_Driver.o [1]
+  .rodata            const         0x3448     0x8  main.o [1]
+  .rodata            const         0x3450     0x8  main.o [1]
+  .rodata            const         0x3458     0x8  main.o [1]
+  .rodata            const         0x3460     0x8  main.o [1]
+  .rodata            const         0x3468     0x8  main.o [1]
+  .rodata            const         0x3470     0x8  main.o [1]
+  .rodata            const         0x3478     0x8  main.o [1]
+  .rodata            const         0x3480     0x8  PWM_Driver.o [1]
+  .rodata            const         0x3488     0x8  PWM_Driver.o [1]
+  .rodata            const         0x3490     0x8  PWM_Driver.o [1]
+  .rodata            const         0x3498     0x8  xprintffull_nomb.o [2]
+  .rodata            const         0x34a0     0x0  lz77_init_single.o [4]
+  Initializer bytes  const         0x34a0   0x1ac  <for P2-1>
+                                 - 0x364c  0x360c
+
+"P2", part 1 of 2:                          0x22d
+  P2-1                        0x2000'0000   0x22d  <Init block>
+    .data            inited   0x2000'0000     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0008     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0010     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0018     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0020    0x20  ADC_Driver.o [1]
+    .data            inited   0x2000'0040    0x20  ADC_Driver.o [1]
+    .data            inited   0x2000'0060     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0068     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0070    0x20  ADC_Driver.o [1]
+    .data            inited   0x2000'0090     0x8  ADC_Driver.o [1]
+    .data            inited   0x2000'0098    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'00b0    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'00c8    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'00e0    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'00f8    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0110    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0128    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0140    0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0158    0x20  PWM_Driver.o [1]
+    .data            inited   0x2000'0178    0x20  PWM_Driver.o [1]
+    .data            inited   0x2000'0198    0x20  PWM_Driver.o [1]
+    .data            inited   0x2000'01b8    0x20  PWM_Driver.o [1]
+    .data            inited   0x2000'01d8    0x20  PWM_Driver.o [1]
+    .data            inited   0x2000'01f8    0x20  PWM_Driver.o [1]
+    .data            inited   0x2000'0218     0x8  XShttio.o [2]
+    .bss             inited   0x2000'0220     0x4  main.o [1]
+    .bss             inited   0x2000'0224     0x4  PWM_Driver.o [1]
+    .bss             inited   0x2000'0228     0x4  xfail_s.o [2]
+    .bss             inited   0x2000'022c     0x1  XShttio.o [2]
+                            - 0x2000'022d   0x22d
+
+"P2", part 2 of 2:                         0x1000
+  CSTACK                      0x2000'0230  0x1000  <Block>
+    CSTACK           uninit   0x2000'0230  0x1000  <Block tail>
+                            - 0x2000'1230  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x364c     0x3'ffff  0x3'c9b4
+  0x2000'022d  0x2000'022f       0x3
+  0x2000'1230  0x2000'7fff    0x6dd0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x1ac (76% of destination):
+               0x34a0  0x1ac
+    1 destination range, total size 0x22d:
+          0x2000'0000  0x22d
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj: [1]
+    ADC_Driver.o               700      240      152
+    Debug_Driver.o             152       24
+    GPIO_Driver.o            1'060      220      192
+    PWM_Driver.o               780      206      196
+    main.o                     744      107        4
+    ------------------------------------------------
+    Total:                   3'436      797      544
+
+dl7M_tln.a: [2]
+    XShttio.o                   64        8        9
+    abort.o                      6
+    exit.o                       4
+    low_level_init.o             4
+    printf.o                    40
+    putchar.o                   32
+    xfail_s.o                   64        3        4
+    xprintffull_nomb.o       4'006        8
+    xprout.o                    22
+    ------------------------------------------------
+    Total:                   4'242       19       13
+
+m7M_tl.a: [3]
+    DblAdd.o                   378
+    DblCmpGe.o                  46
+    DblCmpLe.o                  46
+    DblDiv.o                   582
+    DblMul.o                   418
+    DblSub.o                   226
+    DblToFlt.o                 104
+    DblToS32.o                  58
+    DblToU32.o                  40
+    FltAdd.o                   214
+    FltCmpGe.o                  36
+    FltCmpLe.o                  36
+    FltMul.o                   216
+    FltSub.o                   128
+    FltToDbl.o                  72
+    S32ToDbl.o                  34
+    U32ToDbl.o                  26
+    U32ToFlt.o                  28
+    frexp.o                    112
+    ldexp.o                    314
+    logx64.o                   840
+    ------------------------------------------------
+    Total:                   3'954
+
+rt7M_tl.a: [4]
+    ABImemcpy_unaligned.o      118
+    I64DivMod.o                560
+    I64DivZer.o                  2
+    cexit.o                     10
+    cmain.o                     30
+    cstartup_M.o                12
+    data_init.o                 40
+    lz77_init_single.o         120
+    memchr.o                    88
+    strchr.o                    22
+    strcmp.o                    18
+    strlen.o                    54
+    vector_table_M.o            66
+    ------------------------------------------------
+    Total:                   1'140
+
+shb_l.a: [5]
+    dwrite.o                    30
+    exit.o                      20
+    iarttio.o                  124
+    iarwrite.o                  34
+    iarwstd.o                   32
+    write.o                     16
+    ------------------------------------------------
+    Total:                     256
+
+    Gaps                        38        2
+    Linker created                       16    4'096
+----------------------------------------------------
+    Grand Total:            13'066      834    4'653
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base        0x3248          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x3258          --   Gb  - Linker created -
+?main                        0x32e9         Code  Gb  cmain.o [4]
+ACTIVE_SAMPLE_SEQUENCER_ENABLE
+                             0x2bdd   0x52  Code  Gb  ADC_Driver.o [1]
+ADCACTSS_R              0x2000'0000    0x8  Data  Gb  ADC_Driver.o [1]
+ADCEMUX_R               0x2000'0008    0x8  Data  Gb  ADC_Driver.o [1]
+ADC_CONTROL_MODE             0x2cb7   0x8a  Code  Gb  ADC_Driver.o [1]
+ADC_CTL_R               0x2000'0040   0x20  Data  Gb  ADC_Driver.o [1]
+ADC_EMAX_SELECTION           0x2c2f   0x7a  Code  Gb  ADC_Driver.o [1]
+ADC_FLAG_CLEAR               0x2dc5   0x1c  Code  Gb  ADC_Driver.o [1]
+ADC_FLAG_READ                0x2d93   0x16  Code  Gb  ADC_Driver.o [1]
+ADC_INPUT_CHANNEL            0x2ca9    0xe  Code  Gb  ADC_Driver.o [1]
+ADC_ISC                 0x2000'0090    0x8  Data  Gb  ADC_Driver.o [1]
+ADC_Initialization           0x28d5   0xa2  Code  Gb  main.o [1]
+ADC_PC_R                0x2000'0010    0x8  Data  Gb  ADC_Driver.o [1]
+ADC_PSSI_R              0x2000'0060    0x8  Data  Gb  ADC_Driver.o [1]
+ADC_READ                     0x2da9   0x1c  Code  Gb  ADC_Driver.o [1]
+ADC_RIS                 0x2000'0068    0x8  Data  Gb  ADC_Driver.o [1]
+ADC_SAC_R               0x2000'0018    0x8  Data  Gb  ADC_Driver.o [1]
+ADC_SAMPLES_AVERAGE          0x2de1   0x48  Code  Gb  ADC_Driver.o [1]
+ADC_SSFIFO              0x2000'0070   0x20  Data  Gb  ADC_Driver.o [1]
+ADC_SSMUX               0x2000'0020   0x20  Data  Gb  ADC_Driver.o [1]
+ADC_START_CONVERSION         0x2d41   0x52  Code  Gb  ADC_Driver.o [1]
+AFSEL_R                 0x2000'00e0   0x18  Data  Gb  GPIO_Driver.o [1]
+AMSEL_R                 0x2000'00b0   0x18  Data  Gb  GPIO_Driver.o [1]
+CLK_ADC_Enable               0x2bc5   0x18  Code  Gb  ADC_Driver.o [1]
+CLK_Enable                   0x1cc9   0x24  Code  Gb  GPIO_Driver.o [1]
+CLK_PORTS               0x2000'0098   0x18  Data  Gb  GPIO_Driver.o [1]
+CLK_PWM_Enable               0x2449   0x18  Code  Gb  PWM_Driver.o [1]
+CR_R                    0x2000'0140   0x18  Data  Gb  GPIO_Driver.o [1]
+CSTACK$$Base            0x2000'0230          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1230          --   Gb  - Linker created -
+DATA_R                  0x2000'0110   0x18  Data  Gb  GPIO_Driver.o [1]
+DEN_R                   0x2000'00c8   0x18  Data  Gb  GPIO_Driver.o [1]
+DIR_R                   0x2000'00f8   0x18  Data  Gb  GPIO_Driver.o [1]
+Debug_Led                    0x2755   0x84  Code  Gb  Debug_Driver.o [1]
+Driver_Angle                 0x2977   0x56  Code  Gb  main.o [1]
+GPIO_PORT_UNLOCK             0x1ced   0x3a  Code  Gb  GPIO_Driver.o [1]
+PCTL_R                  0x2000'0128   0x18  Data  Gb  GPIO_Driver.o [1]
+PIN_ANALOG_DIGITAL           0x1dc7   0xc6  Code  Gb  GPIO_Driver.o [1]
+PIN_CONFIGURE                0x1f79   0xb0  Code  Gb  GPIO_Driver.o [1]
+PIN_CONTROL_UNLOCK           0x1d27   0xa0  Code  Gb  GPIO_Driver.o [1]
+PIN_FUNCTION_SELECT          0x1e8d   0x76  Code  Gb  GPIO_Driver.o [1]
+PIN_INPUT_OUTPUT             0x1f03   0x76  Code  Gb  GPIO_Driver.o [1]
+PIN_WRITE_DIGITAL            0x2029   0x68  Code  Gb  GPIO_Driver.o [1]
+PORTE_Initialization         0x285d   0x78  Code  Gb  main.o [1]
+PWM_Action_Comparator_Down
+                             0x258d   0x98  Code  Gb  PWM_Driver.o [1]
+PWM_Action_For_Load          0x24f5   0x98  Code  Gb  PWM_Driver.o [1]
+PWM_CMPA_R              0x2000'01f8   0x20  Data  Gb  PWM_Driver.o [1]
+PWM_CMPB_R              0x2000'01d8   0x20  Data  Gb  PWM_Driver.o [1]
+PWM_CTL_R               0x2000'0158   0x20  Data  Gb  PWM_Driver.o [1]
+PWM_GENA_R              0x2000'0178   0x20  Data  Gb  PWM_Driver.o [1]
+PWM_GENB_R              0x2000'0198   0x20  Data  Gb  PWM_Driver.o [1]
+PWM_Generator_Enable         0x24ab   0x4a  Code  Gb  PWM_Driver.o [1]
+PWM_Intialization            0x2a29   0x82  Code  Gb  main.o [1]
+PWM_Load_R              0x2000'01b8   0x20  Data  Gb  PWM_Driver.o [1]
+PWM_Load_Value          0x2000'0224    0x4  Data  Gb  PWM_Driver.o [1]
+PWM_Module_Start             0x2701    0xc  Code  Gb  PWM_Driver.o [1]
+PWM_Set_Duty_Cycle           0x2685   0x7c  Code  Gb  PWM_Driver.o [1]
+PWM_Set_Frequency            0x2625   0x60  Code  Gb  PWM_Driver.o [1]
+Region$$Table$$Base          0x3248          --   Gb  - Linker created -
+Region$$Table$$Limit         0x3258          --   Gb  - Linker created -
+Use_PWM_Divisor              0x2461   0x4a  Code  Gb  PWM_Driver.o [1]
+Vehicle_Angle                0x29cd   0x56  Code  Gb  main.o [1]
+_LitobFullNoMb                0xde1  0x10a  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb                0x41  0xd7c  Code  Gb  xprintffull_nomb.o [2]
+_Prout                       0x331b   0x16  Code  Gb  xprout.o [2]
+_PutcharFullNoMb              0xf51   0x20  Code  Lc  xprintffull_nomb.o [2]
+_PutcharsFullNoMb             0xf71   0x2e  Code  Lc  xprintffull_nomb.o [2]
+__aeabi_cdcmple              0x11b9         Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple             0x11e9         Code  Gb  DblCmpGe.o [3]
+__aeabi_cfcmple              0x2ba1         Code  Gb  FltCmpLe.o [3]
+__aeabi_cfrcmple             0x2b7d         Code  Gb  FltCmpGe.o [3]
+__aeabi_d2f                  0x2fa1         Code  Gb  DblToFlt.o [3]
+__aeabi_d2iz                 0x1355         Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz                0x16e1         Code  Gb  DblToU32.o [3]
+__aeabi_dadd                 0x1b01         Code  Gb  DblAdd.o [3]
+__aeabi_ddiv                 0x1499         Code  Gb  DblDiv.o [3]
+__aeabi_dmul                 0x1725         Code  Gb  DblMul.o [3]
+__aeabi_dsub                 0x13b5         Code  Gb  DblSub.o [3]
+__aeabi_f2d                  0x2f59         Code  Gb  FltToDbl.o [3]
+__aeabi_fmul                 0x2e81         Code  Gb  FltMul.o [3]
+__aeabi_fsub                 0x2afd         Code  Gb  FltSub.o [3]
+__aeabi_i2d                  0x1391         Code  Gb  S32ToDbl.o [3]
+__aeabi_ldiv0                0x1c7d         Code  Gb  I64DivZer.o [4]
+__aeabi_ui2d                 0x1709         Code  Gb  U32ToDbl.o [3]
+__aeabi_ui2f                 0x30e1         Code  Gb  U32ToFlt.o [3]
+__aeabi_uldivmod             0x18c9         Code  Gb  I64DivMod.o [4]
+__cmain                      0x32e9         Code  Gb  cmain.o [4]
+__dwrite                     0x32a9   0x1e  Code  Gb  dwrite.o [5]
+__exit                       0x1c81   0x14  Code  Gb  exit.o [5]
+__iar_Fail_s                 0x1001   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Log64                  0x2101  0x2a8  Code  Lc  logx64.o [3]
+__iar_Memchr                 0x1079         Code  Gb  memchr.o [4]
+__iar_Strchr                  0xfe9         Code  Gb  strchr.o [4]
+__iar_close_ttio             0x1c95   0x2c  Code  Wk  iarttio.o [5]
+__iar_dadd                   0x13c5         Code  Gb  DblSub.o [3]
+__iar_data_init3             0x31fd   0x28  Code  Gb  data_init.o [4]
+__iar_dsub                   0x1b11         Code  Gb  DblAdd.o [3]
+__iar_dsubStart              0x1b23         Code  Gb  DblAdd.o [3]
+__iar_fadd                   0x2b09         Code  Gb  FltSub.o [3]
+__iar_frexp                  0x1155         Code  Gb  frexp.o [3]
+__iar_frexp64                0x1149         Code  Gb  frexp.o [3]
+__iar_frexpl                 0x1155         Code  Gb  frexp.o [3]
+__iar_fsub                   0x3009         Code  Gb  FltAdd.o [3]
+__iar_fsubStart              0x3019         Code  Gb  FltAdd.o [3]
+__iar_get_ttio               0x3175   0x4c  Code  Gb  iarttio.o [5]
+__iar_ldexp64                0x1219         Code  Gb  ldexp.o [3]
+__iar_log64                  0x2445    0x4  Code  Gb  logx64.o [3]
+__iar_log_medium             0x2445    0x4  Code  Gb  logx64.o [3]
+__iar_log_medium64           0x2445    0x4  Code  Gb  logx64.o [3]
+__iar_log_mediuml            0x2445    0x4  Code  Gb  logx64.o [3]
+__iar_lookup_ttioh           0x1cc1    0x8  Code  Gb  XShttio.o [2]
+__iar_lz77_init_single3
+                             0x30fd   0x78  Code  Gb  lz77_init_single.o [4]
+__iar_program_start          0x33d5         Code  Gb  cstartup_M.o [4]
+__iar_scalbln64              0x1219         Code  Gb  ldexp.o [3]
+__iar_scalbn64               0x1219         Code  Gb  ldexp.o [3]
+__iar_sh_stdout              0x32c7   0x20  Code  Gb  iarwstd.o [5]
+__iar_sh_write               0x3225   0x22  Code  Gb  iarwrite.o [5]
+__iar_ttio_guard_lock        0x31c5   0x24  Code  Wk  XShttio.o [2]
+__iar_ttio_guard_unlock
+                             0x31e9   0x14  Code  Wk  XShttio.o [2]
+__iar_ttio_handles      0x2000'0218    0x8  Data  Lc  XShttio.o [2]
+__iar_unaligned_memcpy       0x10d1         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned_memcpy4
+                             0x10f1         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned_memcpy8
+                             0x10f1         Code  Gb  ABImemcpy_unaligned.o [4]
+__low_level_init             0x3307    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [4]
+__write                      0x3299   0x10  Code  Gb  write.o [5]
+_call_main                   0x32f5         Code  Gb  cmain.o [4]
+_exit                        0x3311         Code  Gb  cexit.o [4]
+_main                        0x3303         Code  Gb  cmain.o [4]
+abort                        0x1af9    0x6  Code  Gb  abort.o [2]
+exit                         0x330b    0x4  Code  Gb  exit.o [2]
+frexp                        0x1149         Code  Gb  frexp.o [3]
+frexpl                       0x1149         Code  Gb  frexp.o [3]
+ldexp                        0x1219         Code  Gb  ldexp.o [3]
+ldexpl                       0x1219         Code  Gb  ldexp.o [3]
+log                          0x2445    0x4  Code  Gb  logx64.o [3]
+logl                         0x2445    0x4  Code  Gb  logx64.o [3]
+main                         0x2815   0x48  Code  Gb  main.o [1]
+memchr                       0x1079         Code  Gb  memchr.o [4]
+printf                       0x27ed   0x28  Code  Gb  printf.o [2]
+putchar                      0x3279   0x20  Code  Gb  putchar.o [2]
+scalbln                      0x1219         Code  Gb  ldexp.o [3]
+scalblnl                     0x1219         Code  Gb  ldexp.o [3]
+scalbn                       0x1219         Code  Gb  ldexp.o [3]
+scalbnl                      0x1219         Code  Gb  ldexp.o [3]
+scale                         0xeeb   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'0228    0x4  Data  Lc  xfail_s.o [2]
+strchr                        0xfe9         Code  Gb  strchr.o [4]
+strcmp                       0x20ed         Code  Gb  strcmp.o [4]
+strlen                       0x1041         Code  Gb  strlen.o [4]
+ttio_guard              0x2000'022c    0x1  Data  Lc  XShttio.o [2]
+voltage                 0x2000'0220    0x4  Data  Gb  main.o [1]
+
+
+[1] = F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  13'066 bytes of readonly  code memory
+     834 bytes of readonly  data memory
+   4'653 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

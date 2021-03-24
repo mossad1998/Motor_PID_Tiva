@@ -1,0 +1,15 @@
+"G:\IAR\arm\bin\armproc.dll" 
+
+"G:\IAR\arm\bin\armlmiftdi.dll" 
+
+"F:\Tiva_C\Motor_Driver\Motor_Driver_V1\Debug\Exe\Motor_Driver_V1.out" 
+
+--plugin="G:\IAR\arm\bin\armbat.dll" 
+
+--device_macro="G:\IAR\arm\config\debugger\TexasInstruments\TM4C123.dmac" 
+
+--flash_loader="G:\IAR\arm\config\flashloader\TexasInstruments\FlashTC4_H6_o.board" 
+
+
+
+
